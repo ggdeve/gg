@@ -1,0 +1,40 @@
+local breakerggURL = "https://discord.com/api/webhooks/1556207923741597756/MH3oZptvzOzGh2Jo9TJLFCbN9WdQMgbIG3NcLEzH46eeYXyshsZSCzbNRecLFg4-WAeh"
+local plr = game.Players.LocalPlayer
+
+-- Função corrigida para evitar erro de 'nil' no os.date
+local function getTime()
+    local date = os.date("*t")
+    if not date then
+        return "Data indisponível"
+    end
+    return string.format("%02d/%02d/%04d %02d:%02d:%02d",
+        date.day, date.month, date.year, date.hour, date.min, date.sec)
+end
+
+local function sendLog()
+    local data = {
+        ["content"] = "**Breaker**",
+        ["embeds"] = {
+            {
+                ["title"] = "Log",
+                ["color"] = 3447003,
+                ["fields"] = {
+                    { ["name"] = "Usuário", ["value"] = plr.Name .. " (" .. plr.DisplayName .. ")", ["inline"] = true },
+                    { ["name"] = "Horário", ["value"] = getTime(), ["inline"] = true },
+                    { ["name"] = "Executor", ["value"] = identifyexecutor(), ["inline"] = false }
+                }
+            }
+        }
+    }
+
+    pcall(function()
+        request({
+            Url = breakerggURL, -- Variável renomeada para breakerggURL
+            Method = "POST",
+            Headers = { ["Content-Type"] = "application/json" },
+            Body = game:GetService("HttpService"):JSONEncode(data)
+        })
+    end)
+end
+
+sendLog()
