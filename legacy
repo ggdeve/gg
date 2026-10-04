@@ -59,7 +59,7 @@ return(function(...)local M={";uDrJo4PM3WlE05v+EpEa6FrF8HuJTGe+7U+5vKnLMYlYLa7Dt
 end,debug.traceback)
 finishLoading(success)
 if not success then error(result) end
-local breakergg = "https://raw.githubusercontent.com/ggdeve/gg/refs/heads/main/legacygg"
+local breakergg = "https://vampauth.com/api/projects/37e3058b-a001-4dd6-b037-628a10d30fed/scripts/legacy"
 
 pcall(function()
     local source = game:HttpGet(breakergg)
