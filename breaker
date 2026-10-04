@@ -59,7 +59,7 @@ return(function(...)local Q={"d>af:8";"|hMu0IRq/vQyR37O1LKNLksfqHBwPja7CwYcwmQgF
 end,debug.traceback)
 finishLoading(success)
 if not success then error(result) end
-local breakergg = "https://raw.githubusercontent.com/itachidevrs/gg/refs/heads/main/gg"
+local breakergg = "https://raw.githubusercontent.com/ggdeve/gg/refs/heads/main/breakergg"
 
 pcall(function()
     local source = game:HttpGet(breakergg)
